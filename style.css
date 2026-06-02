@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* The * selector resets most things, but html/body need explicit instructions */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    background-color: #000080;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ED1C24, #0066B3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+}
+.herodos {
+    min-height: 0vh;
+    background: linear-gradient(135deg, #ED1C24, #0066B3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    width: 100%;
+}
