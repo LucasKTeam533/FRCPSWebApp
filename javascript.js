@@ -1,6 +1,6 @@
 document.getElementById('predictButton').addEventListener('click', async function() {
     console.log("PROGRAM STARTED!");
-    
+    require('dotenv').config();
     const apiKey = process.env.TBA_API_KEY;
     const baseUrl = "https://www.thebluealliance.com/api/v3";
     const eventKey = document.getElementById('eventKeyInput').value;
