@@ -15,14 +15,13 @@ document.getElementById('predictButton').addEventListener('click', async functio
         
         const jsonResult = await response.json();//from vercel
         
-        const data = jsonResult.data;
+        let data = jsonResult.data;
         const teamData = jsonResult.teamData; //putting the data into arrays
         const oprData = jsonResult.oprData;
 
         const oprs = oprData.oprs || {};
         const dprs = oprData.dprs || {};  
         const ccwms = oprData.ccwms || {};
-                console.log("EXACTLY WHAT TBA SENT:", data);
                 data.splice(0, data.length, ...data.filter(m => m.comp_level === 'qm').sort((a, b) => a.match_number - b.match_number));
 
                 console.log(`📥 Successfully retrieved matches. Filtering schedule:\n`);
