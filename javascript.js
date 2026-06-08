@@ -22,7 +22,7 @@ document.getElementById('predictButton').addEventListener('click', async functio
         const oprs = oprData.oprs || {};
         const dprs = oprData.dprs || {};  
         const ccwms = oprData.ccwms || {};
-                data.splice(0, data.length, ...data.filter(m => m.comp_level === 'qm').sort((a, b) => a.match_number - b.match_number));
+                data = data.filter(m => m.comp_level === 'qm').sort((a, b) => a.match_number - b.match_number);
 
                 console.log(`📥 Successfully retrieved matches. Filtering schedule:\n`);
                 console.log("-------------------------------------------------");
