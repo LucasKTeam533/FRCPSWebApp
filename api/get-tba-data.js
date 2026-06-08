@@ -10,13 +10,6 @@ export default async function handler(request, response) {
     const apiKey = process.env.TBA_API_KEY;
     const baseUrl = "https://www.thebluealliance.com/api/v3";
 
-    // SAFETY CHECK: Make sure the Vercel env variable actually exists
-    if (!apiKey) {
-        return response.status(500).json({ 
-            error: "Backend Error: TBA_API_KEY is not defined in Vercel Environment Variables!" 
-        });
-    }
-
     const fetchOptions = {
         method: 'GET',
         headers: {
@@ -26,14 +19,13 @@ export default async function handler(request, response) {
     };
 
     try {
-        // Run through Vercel to remain anonymous 
+        // Run through Vercel to remain anonymous :)))) 
         const [matchesResponse, teamsResponse, oprsResponse] = await Promise.all([
             fetch(`${baseUrl}/event/${eventKey}/matches`, fetchOptions),
             fetch(`${baseUrl}/event/${eventKey}/teams`, fetchOptions), 
             fetch(`${baseUrl}/event/${eventKey}/oprs`, fetchOptions)
         ]);
 
-        // SAFETY CHECK: If TBA rejected the token or the event key, catch it here
         if (!matchesResponse.ok) {
             const errorText = await matchesResponse.text();
             return response.status(matchesResponse.status).json({
