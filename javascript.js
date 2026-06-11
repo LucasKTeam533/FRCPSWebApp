@@ -1,33 +1,28 @@
 document.getElementById('predictButton').addEventListener('click', async function() {
     console.log("PROGRAM STARTED!");
-    require('dotenv').config();
-    const apiKey = process.env.TBA_API_KEY;
-    const baseUrl = "https://www.thebluealliance.com/api/v3";
+    
     const eventKey = document.getElementById('eventKeyInput').value;
-    var totalTrue =0;
+    var totalTrue = 0;
     var checkedMatches = 0;
-    const fetchOptions = {
-        method: 'GET',
-        headers: {
-            'X-TBA-Auth-Key': apiKey,
-            'accept': 'application/json' 
-        }
-    };
+    
     try {
-        const [matchesResponse, teamsResponse, oprsResponse] = await Promise.all([
-            fetch(`${baseUrl}/event/${eventKey}/matches`, fetchOptions),
-            fetch(`${baseUrl}/event/${eventKey}/teams`, fetchOptions), 
-            fetch(`${baseUrl}/event/${eventKey}/oprs`, fetchOptions)
-        ]);
-
-        const data = await matchesResponse.json();
-        const teamData = await teamsResponse.json();
-        const oprData = await oprsResponse.json();
+        // thisis  in the api folder, for fetching the data through vercel for api security
+        const response = await fetch(`/api/get-tba-data?eventKey=${eventKey}`);
+        
+        if (!response.ok) {
+            throw new Error(`Server responded with status ${response.status}`);
+        }
+        
+        const jsonResult = await response.json();//from vercel
+        
+        let data = jsonResult.data;
+        const teamData = jsonResult.teamData; //putting the data into arrays
+        const oprData = jsonResult.oprData;
 
                 const oprs = oprData.oprs || {};
                 const dprs = oprData.dprs || {};  
                 const ccwms = oprData.ccwms || {};
-        
+
                 data.splice(0, data.length, ...data.filter(m => m.comp_level === 'qm').sort((a, b) => a.match_number - b.match_number));
 
                 console.log(`📥 Successfully retrieved matches. Filtering schedule:\n`);
