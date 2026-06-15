@@ -47,23 +47,3 @@ html, body {
     padding: 0px;
     width: 100%;
 }
-
-.offline-banner {
-  background-color: #d32f2f; /* A standard alert red */
-  color: white;
-  text-align: center;
-  padding: 10px;
-  font-family: sans-serif;
-  font-weight: bold;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999; /* Ensures it sits on top of everything else */
-  transition: opacity 0.3s ease-in-out;
-}
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
