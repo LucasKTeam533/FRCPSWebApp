@@ -20,13 +20,14 @@ html, body {
     padding: 0 !important;
     width: 100%;
     background-color: #000080;
+    background: linear-gradient(135deg, #ED1C24, #0066B3);
+    background-attachment: fixed;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
 }
 
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ED1C24, #0066B3);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +39,6 @@ html, body {
 }
 .herodos {
     min-height: 0vh;
-    background: linear-gradient(135deg, #ED1C24, #0066B3);
     display: flex;
     flex-direction: column;
     justify-content: center;
