@@ -8,7 +8,6 @@ const ASSETS_TO_CACHE = [
   './manifest.json',
   './icon192.png',
   './icon512.png'
-  // Note: Add anything inside your /api folder if it contains local static JSON you need offline
 ];
 
 self.addEventListener('install', (event) => {
