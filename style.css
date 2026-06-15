@@ -26,25 +26,22 @@ html, body {
     color: #ffffff;
 }
 
-.hero {
-    min-height: 100vh;
+.hero, .herodos {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column
+    justify-content: flex-start; 
     align-items: center;
     text-align: center;
-    padding: 0px;
     width: 100%;
-    padding: 40px 16px;
+    padding: 40px 16px 10px 16px; 
 }
-.herodos {
-    min-height: 0vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px;
-    width: 100%;
-    padding: 40px 16px;
+
+.hero 
+{
+    min-height: auto; 
+}
+
+.herodos 
+{
+    min-height: 0vh; 
 }
