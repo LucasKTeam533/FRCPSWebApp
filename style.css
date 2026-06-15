@@ -26,20 +26,24 @@ html, body {
     color: #ffffff;
 }
 
-.hero, .herodos {
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh; 
+    padding: 40px 16px; 
+}
+
+.herodos {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 40px 16px 10px 16px; 
-}
-
-.hero {
-    min-height: auto;
-}
-
-.herodos {
+    padding: 10px 16px 40px 16px; 
     min-height: 0vh; 
 }
