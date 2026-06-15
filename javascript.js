@@ -148,13 +148,15 @@ document.getElementById('predictButton').addEventListener('click', async functio
                 document.getElementById('outputDisplay').innerHTML = htmlOutput; 
                 document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
 
-  }       catch (error) {
+  }         catch (error) {
         console.error("An error occurred while fetching or processing data:", error);
-        document.getElementById('outputDisplay').innerHTML = "Error: " + error.message;
-        document.getElementById('outputDisplay').innerHTML = "<b>Please enter a valid event key.</b>";
-        document.getElementById('outputDisplay').innerHTML = "<b>Make sure your event key has the year at the beginning and there are no spaces.</b>";
+        let errorHtml = "<b>⚠️ Please enter a valid event key.</b><br>";
+        errorHtml += "Make sure your event key has the year at the beginning and there are no spaces.<br>";
+        errorHtml += "<small style='opacity: 0.8;'>System log: " + error.message + "</small>";
+        document.getElementById('outputDisplay').innerHTML = errorHtml;
         document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
-    }    });
+    }    
+});
 
 
 function calcPercent(redAmt, blueAmt, allianceColor) {
