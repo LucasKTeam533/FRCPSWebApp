@@ -154,4 +154,11 @@ function calcPercent(redAmt, blueAmt, allianceColor) {
     calculatedPct = Math.round(calculatedPct * 10000.0)/100.0;
     return calculatedPct;
 }
-
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    // Keep the path relative to the root
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered successfully!', reg))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
