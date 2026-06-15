@@ -150,7 +150,7 @@ document.getElementById('predictButton').addEventListener('click', async functio
 
   }         catch (error) {
         console.error("An error occurred while fetching or processing data:", error);
-        let errorHtml = "<b>⚠️ Please enter a valid event key.</b><br>";
+        let errorHtml = "Please enter a valid event key.<br>";
         errorHtml += "Make sure your event key has the year at the beginning and there are no spaces.<br>";
         errorHtml += "<small style='opacity: 0.8;'>System log: " + error.message + "</small>";
         document.getElementById('outputDisplay').innerHTML = errorHtml;
