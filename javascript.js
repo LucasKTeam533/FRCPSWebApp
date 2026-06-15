@@ -2,9 +2,20 @@ document.getElementById('predictButton').addEventListener('click', async functio
     console.log("PROGRAM STARTED!");
     
     const eventKey = document.getElementById('eventKeyInput').value;
+    const offlineBanner = document.getElementById('offline-banner');
     var totalTrue = 0;
     var checkedMatches = 0;
-    
+
+    if ('serviceWorker' in navigator) 
+    {
+        window.addEventListener('load', () => 
+        {
+            navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker registered successfully!', reg))
+            .catch(err => console.error('Service Worker registration failed:', err));
+        }
+        );
+    }
     try {
         // thisis  in the api folder, for fetching the data through vercel for api security
         const response = await fetch(`/api/get-tba-data?eventKey=${eventKey}`);
@@ -154,11 +165,16 @@ function calcPercent(redAmt, blueAmt, allianceColor) {
     calculatedPct = Math.round(calculatedPct * 10000.0)/100.0;
     return calculatedPct;
 }
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    // Keep the path relative to the root
-    navigator.serviceWorker.register('./sw.js')
-      .then(reg => console.log('Service Worker registered successfully!', reg))
-      .catch(err => console.error('Service Worker registration failed:', err));
-  });
+
+function updateOnlineStatus() {
+  if (navigator.onLine) {
+    offlineBanner.classList.add('hidden');
+    console.log("Back online!");
+  } else {
+    offlineBanner.classList.remove('hidden');
+    console.warn("Connection lost. App is offline.");
+  }
 }
+window.addEventListener('load', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+window.addEventListener('online', updateOnlineStatus);
