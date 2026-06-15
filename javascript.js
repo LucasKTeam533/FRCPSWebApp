@@ -152,6 +152,7 @@ document.getElementById('predictButton').addEventListener('click', async functio
         console.error("An error occurred while fetching or processing data:", error);
         document.getElementById('outputDisplay').innerHTML = "Error: " + error.message;
         document.getElementById('outputDisplay').innerHTML = "<b>Please enter a valid event key.</b>";
+        document.getElementById('outputDisplay').innerHTML = "<b>Make sure your event key has the year at the beginning and there are no spaces.</b>";
         document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
     }    });
 
