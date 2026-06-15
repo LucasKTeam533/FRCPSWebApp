@@ -29,15 +29,15 @@ html, body {
 .hero, .herodos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 40px 16px; 
+    padding: 40px 16px 10px 16px; 
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: auto;
 }
 
 .herodos {
