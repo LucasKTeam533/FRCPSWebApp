@@ -1,6 +1,6 @@
 {
-  "short_name": "FRCPredictSim",
-  "name": "FRC Prediction Sim",
+  "short_name": "FRC Prediction Sim",
+  "name": "FRC Prediction Simulator",
   "icons": [
     {
       "src": "./icon192.png",
