@@ -68,7 +68,7 @@ html, body {
     padding: 6px 20px;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-family: 'Roboto', sans-serif;
     border: none;
     cursor: pointer;
@@ -86,7 +86,7 @@ html, body {
     padding: 6px 15px;          
     border-radius: 5px;          
     font-family: 'Roboto', sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     border: 2px solid #000080;
     outline: none;
     width: 250px;                
