@@ -146,6 +146,7 @@ document.getElementById('predictButton').addEventListener('click', async functio
                 percentCorrect = Math.round(percentCorrect * 100.0)/100.0;
                 htmlOutput += percentCorrect + "% accuracy!";
                 document.getElementById('outputDisplay').innerHTML = htmlOutput; 
+                document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
 
   }       catch (error) {
         console.error("An error occurred while fetching or processing data:", error);
