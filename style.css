@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* The * selector resets most things, but html/body need explicit instructions */
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img 
+{
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes weird spacing below inline images */
 }
 
 html, body {
