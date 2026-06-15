@@ -51,6 +51,7 @@ html, body {
 {
     padding: 10px 16px 40px 16px; 
     width: 100%;
+    scroll-margin-top: 40px;
 }
 
 #outputDisplay:empty 
