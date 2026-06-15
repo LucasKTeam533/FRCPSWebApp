@@ -92,9 +92,3 @@ html, body {
     max-width: 90%;              
     margin-bottom: 15px;
 }
-
-#eventKeyInput:focus 
-{
-    border-color: #001fcc;
-    box-shadow: 0 0 8px rgba(0, 0, 128, 0.4);
-}
