@@ -151,7 +151,7 @@ document.getElementById('predictButton').addEventListener('click', async functio
   }       catch (error) {
         console.error("An error occurred while fetching or processing data:", error);
         document.getElementById('outputDisplay').innerHTML = "Error: " + error.message;
-        document.getElementById('outputDisplay').innerHTML = "<b>Please enter a valid key</b>";
+        document.getElementById('outputDisplay').innerHTML = "<b>Please enter a valid event key.</b>";
         document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
     }    });
 
