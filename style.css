@@ -22,7 +22,6 @@ html, body {
     background-color: #000080;
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
-    padding: 0 16px;
 }
 
 .hero {
@@ -35,6 +34,7 @@ html, body {
     text-align: center;
     padding: 0px;
     width: 100%;
+    padding: 40px 16px;
 }
 .herodos {
     min-height: 0vh;
@@ -46,4 +46,5 @@ html, body {
     text-align: center;
     padding: 0px;
     width: 100%;
+    padding: 40px 16px;
 }
