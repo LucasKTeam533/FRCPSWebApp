@@ -151,6 +151,8 @@ document.getElementById('predictButton').addEventListener('click', async functio
   }       catch (error) {
         console.error("An error occurred while fetching or processing data:", error);
         document.getElementById('outputDisplay').innerHTML = "Error: " + error.message;
+        document.getElementById('outputDisplay').innerHTML = "<b>⚠️ Error: " + error.message + "</b>";
+        document.getElementById('outputDisplay').scrollIntoView({ behavior: 'smooth' });
     }    });
 
 
