@@ -37,6 +37,13 @@ html, body {
     padding: 40px 16px; 
 }
 
+.hero img 
+{
+    max-height: 25vh;
+    width: auto;
+    margin-bottom: 10px;
+}
+
 .herodos {
     display: flex;
     flex-direction: column;
@@ -47,6 +54,7 @@ html, body {
     padding: 0; 
     min-height: 0vh; 
 }
+
 #outputDisplay 
 {
     padding: 10px 16px 40px 16px; 
