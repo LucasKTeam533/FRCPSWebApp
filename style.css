@@ -59,7 +59,8 @@ html, body {
     padding: 0;
 }
 
-.primary-btn {
+.primary-btn 
+{
     display: inline-block;
     background-color: #000080; /* Your navy blue */
     color: #ffffff;
@@ -72,6 +73,28 @@ html, body {
     cursor: pointer;
     text-decoration: none;
 }
-.primary-btn:hover {
+.primary-btn:hover 
+{
     background-color: #001fcc; 
+}
+
+#eventKeyInput 
+{
+    background-color: #ffffff;
+    color: #333333;
+    padding: 10px 15px;          
+    border-radius: 5px;          
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border: 2px solid #000080;
+    outline: none;
+    width: 250px;                
+    max-width: 90%;              
+    margin-bottom: 15px;
+}
+
+#eventKeyInput:focus 
+{
+    border-color: #001fcc;
+    box-shadow: 0 0 8px rgba(0, 0, 128, 0.4);
 }
